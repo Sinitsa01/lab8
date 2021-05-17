@@ -29,6 +29,13 @@ public class LogoutServlet extends ChatServlet {
                 // Удалить пользователя из списка активных
                 // Т.к. запросы обрабатываются одновременно,
                 // нужна синхронизация
+                String systemMessage = " Пользователь " + aUser.getName() + " покинул  чат ";
+
+                synchronized (messages) {
+                    ChatMessage str = new ChatMessage(systemMessage, aUser, Calendar.getInstance().getTimeInMillis());
+                    str.setFlag(true);
+                    messages.add(str);
+                }
 
                 synchronized(activeUsers) {
                     activeUsers.remove(name);

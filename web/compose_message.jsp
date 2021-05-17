@@ -8,8 +8,8 @@
 <form action="/Laba8/send_message.do" method="post">
     Text message:
     <input type="text" name="message" style="width: 50%">
-    <input type="submit" value="Отправить">
-    <a href="/Laba8/logout.do" target="_top">Выйти из чата</a>
+    <input type="submit" value="Send message">
+    <a href="/Laba8/logout.do" target="_top">quit chat</a>
     <br>
 </form>
 </body>
